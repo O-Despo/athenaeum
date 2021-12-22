@@ -26,6 +26,13 @@ REPL Displayes the outcome of the statement
 
 ## 2.2 Semicolon Insertion
 
+### Rules of semicolon insertion
+
+1. Offending token: The paser inserts a semi-colon where there is a token that could not be part of the first statement
+2. A semicolon is inserted after a nonlinear control flow statement
+3. A semicolon is inserted if ++ or -- is immediately preceeded by a line terminator
+
+
 The basic rule is simple. When processing a statement, the parser includes every token until it encounters a semicolon or an “offending token”—something that could not be part of the statement. If the offending token is preceded by a line terminator, or is a }, or is the end of input, then the parser adds a semicolon.
 
 The “offending token” rule is simple, and it works well in almost all cases. However, it fails when a statement starts with a token that could have been a part of the preceding statement. Consider this example:
