@@ -37,3 +37,5 @@ List the comparison operators: <, <=, >, >=, ===. !==
 What is the difference between === and ==: === is strict and will not morph types
 
 If two varibales are NaN what will happen if you test if theu are true: You will get false as all NaN's are differnet
+
+test
