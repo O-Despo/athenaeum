@@ -88,4 +88,26 @@ batch  = tensor[182 * n:128 * (n + 1)]
 
 - Neural Nets can be reduced to *tensor operations*
 - add and multiplying tensors being examples
-- A 
+- A dense layer is `output = relu(dot(W, input) + b)`: where W is 2D tensor and b is a vector
+
+### 2.3.1 Element-wise operations
+
+- relu and addition are *element-wise* operations
+- Operations that are applied independently to each entry in the tenor
+- These are ideal for parallel implementations 
+- we can use a for loop to make naive relu same for addition
+- We will instead use Numpy functions and BLAS which are optimized
+- BLAS is low lever parallel C
+- Numpy is faster
+
+### 2.3.2 Broadcasting
+
+1. First **Broadcast axes** are added to the tensor and to match the shape of the other
+2. The first tensor is repeated over the broadcast axes
+
+- Broadcasting is needed when we add two tensors of differing shapes together
+- The repetition operation is entirely virtual
+
+### 2.3.3 Tensor Dot
+
+
