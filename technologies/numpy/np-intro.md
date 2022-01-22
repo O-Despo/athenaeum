@@ -37,7 +37,7 @@ import numpy as np
 - **Rank**: the number of dimensions of a array
 - **shape**: tuple of integers giving array size along each dimension
 
-### initialization
+## initialization
 
 ```python
 a = np.array([1, 2, 3])
@@ -47,7 +47,7 @@ print(a[0])
 
 Accessed elm with `[]`
 
-### More information
+## More information about arrays
 
 - **ndarray**: shorthand for n-dimensional array, array with any number of dimensions
 - `ndarray`: call used to represent matrices and vectors
@@ -82,4 +82,73 @@ e.i.
 
 - **np.empty()**: creates a array with the states of the memory alraedy in place so it is somewhat random
 
+## Adding, removing, and sorting elements¶
 
+- `np.sort()`: sorts elements
+- `np.concatenate()`: concatenate
+
+```python
+arr = np.array([2, 1, 5, 3, 7, 4, 6, 8])
+np.sort(arr)
+#array([1, 2, 3, 4, 5, 6, 7, 8])
+
+a = np.array([1, 2, 3, 4])
+b = np.array([5, 6, 7, 8])
+
+np.concatenate((a, b))
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6]])
+np.concatenate((x, y), axis=0)
+```
+
+### other sort options
+
+- `argsort`: indirect sort along a specified axis, 
+- `lexsort`: indirect stable sort
+- `searchsort`: fined elms in arr
+- `partition`: partial sort
+
+## How to know the shape and size of a array
+
+- `ndarray.ndim`: tell you the number of axes or dimentions
+- `ndarray.size`: total number of elemnets
+- `ndarray.shape`: returns a tuple of ints each interger representing the number of elements on that axis
+
+```python
+array_example = np.array([[[0, 1, 2, 3],
+
+                           [4, 5, 6, 7]],
+
+
+                          [[0, 1, 2, 3],
+
+                           [4, 5, 6, 7]],
+
+
+                          [[0 ,1 ,2, 3],
+
+                           [4, 5, 6, 7]]])
+
+array_example.ndim #(3)
+array_example.size #(24)
+array_example.shape #(3, 2, 4)
+```
+
+## Reshape an array
+
+- `ndarray.reshape()`: gives the array a new shape without altering data
+- `np.reshape(input, newshape, order)`: reshapes a array with more options that `ndarray.reshape()`
+- when refering to `np.reshape()` the paramter `order` discribes method of storage in memory C-like index order or Fortan-like index order
+
+- A reshaped array should have the same number of elements as the orginal array
+
+
+```python
+a = np.arange(6)
+print(a)
+
+b = a.reshape(3, 2)
+print(b)
+
+np.reshape(a, newshape=(1, 6), order='C')
+```
