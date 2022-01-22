@@ -5,9 +5,9 @@
 ## Welcome to NP
 
 - **NumPy**: Numerical Python
-- Standart for working with python data
+- Standard for working with python data
 - Used in Pandas, SCiPy, MatPlotlib, scikit-learn,scikit-image
-- provide **ndarray** homogenour n-dimentional array object
+- provide **ndarray** homogenous n-dimensional array object
 
 ## install
 
@@ -27,13 +27,12 @@ import numpy as np
 - NP uses less memory
 - NP allows to specify data type
 
-## What is an arrya
+## What is an  Array
 
 - Man data structure for NP
 - **Array**: grid of values contains raw data, how to locate elm, how to interpret
-- A grid that can be intedts
 - `dtype`
-- **Possible indexs**: a array can be indexed by tuple of non-negative ints, bools, another array, or all ints
+- **Possible indexes**: a array can be indexed by tuple of non-negative ints, bools, another array, or all ints
 - **Rank**: the number of dimensions of a array
 - **shape**: tuple of integers giving array size along each dimension
 
@@ -58,7 +57,7 @@ Accessed elm with `[]`
 #### Attrs of array
 
 - **array**: fixed size container of items with same type and size
-- dims deffined by shape
+- dims defined by shape
 - **axes**: what NP call dimensions
 
 e.i.
@@ -69,9 +68,9 @@ e.i.
 ```
 
 - Has two axes
-- arrays can be accessed and modifred by inexing and sliceing
+- arrays can be accessed and modified by indexing and slicing
 - arrays can point to each other
-- **attributes**: informaiton intrisic to the array
+- **attributes**: information intrinsic to the array
 
 ## How to create a basic array
 
@@ -80,7 +79,7 @@ e.i.
 3. `np.ones(2)` returns `array([1., 1.])`
 4. `np.empty(2)` reutunr `array([ 3.14, 42.  ])  # may vary`
 
-- **np.empty()**: creates a array with the states of the memory alraedy in place so it is somewhat random
+- **np.empty()**: creates a array with the states of the memory already in place so it is somewhat random
 
 ## Adding, removing, and sorting elements¶
 
@@ -110,7 +109,7 @@ np.concatenate((x, y), axis=0)
 
 ## How to know the shape and size of a array
 
-- `ndarray.ndim`: tell you the number of axes or dimentions
+- `ndarray.ndim`: tell you the number of axes or dimensions
 - `ndarray.size`: total number of elements
 - `ndarray.shape`: returns a tuple of ints each integer representing the number of elements on that axis
 
@@ -138,9 +137,9 @@ array_example.shape #(3, 2, 4)
 
 - `ndarray.reshape()`: gives the array a new shape without altering data
 - `np.reshape(input, newshape, order)`: reshapes a array with more options that `ndarray.reshape()`
-- when refering to `np.reshape()` the paramter `order` discribes method of storage in memory C-like index order or Fortan-like index order
+- when referring to `np.reshape()` the parameter `order` describes method of storage in memory C-like index order or Fortan-like index order
 
-- A reshaped array should have the same number of elements as the orginal array
+- A reshaped array should have the same number of elements as the original array
 
 
 ```python
