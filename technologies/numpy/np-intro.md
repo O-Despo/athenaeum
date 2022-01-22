@@ -59,7 +59,7 @@ Accessed elm with `[]`
 
 - **array**: fixed size container of items with same type and size
 - dims deffined by shape
-- **axes**: what NP call dimentions
+- **axes**: what NP call dimensions
 
 e.i.
 
@@ -111,8 +111,8 @@ np.concatenate((x, y), axis=0)
 ## How to know the shape and size of a array
 
 - `ndarray.ndim`: tell you the number of axes or dimentions
-- `ndarray.size`: total number of elemnets
-- `ndarray.shape`: returns a tuple of ints each interger representing the number of elements on that axis
+- `ndarray.size`: total number of elements
+- `ndarray.shape`: returns a tuple of ints each integer representing the number of elements on that axis
 
 ```python
 array_example = np.array([[[0, 1, 2, 3],
@@ -152,3 +152,113 @@ print(b)
 
 np.reshape(a, newshape=(1, 6), order='C')
 ```
+
+## Adding new acis to an array
+
+- `np.newaxis()`: increases the axis of a arr by 1
+- `np.expand_dims()`: add new acis in a specified positions
+
+- **row vector**: a vector with the 1 axis along the first dimension
+- **col vector**: a vector with the 1 axis along the second dimension
+
+```python
+a1 = np.arange(6)
+print(a1.shape)
+
+row_vec = a[np.newaxis, :]
+print(row_vec.shape)
+
+col_vec = a[:, np.newaxis]
+print(col_vec)
+```
+
+```python
+a = np.arange(6)
+print(a.shape)
+
+b = np.expand_dims(a, axis=1)
+print(b.shape)
+```
+
+##  Indexing and slicing
+
+- Slicing and indexing is similar to python lists
+- `ndarray[]` allows for slicing and indexing of a array
+- `np.mgrid[]`: creates a multi-dim mesh 
+
+```python
+a = np.array([1, 2, 3])
+print(a[1])
+print(a[0:1])
+print(a[1:])
+print(a[-2:])
+```
+
+### Index by condition 
+
+```python
+a = np.array([[1, 2, 3, 4],[5, 6, 7, 8], [9, 10, 11, 12]])
+print(a[a<5])
+divisible_by_2 = a[a%2==0]
+print(divisible_by_2)
+
+# Logical operators
+five_up = (a > 5) | (a == 5)
+
+print(five_up)
+```
+
+### Nonzero
+
+- `np.nonzero()`: print the indcies of elements that meet a condition
+
+```python
+b = np.nonzero(a < 5)
+print(b) #(array([0, 0, 0, 0]), array([0, 1, 2, 3]))
+list_of_coordinates= list(zip(b[0], b[1]))
+```
+
+## Creating arrays from existing data
+
+- You can make a array by slicing
+- `np.vstack()`: stacks the input arrays vertically
+- `np.hstack()`: stacks the input arrays horizontally
+- `np.hsplit()`: allows to split a array to predefined shapes
+- `np.hsplit(input, (col_to_split_at, col_to_split_at))`
+- `np.hsplit(input, how_to_divide)`
+
+```python
+a = np.arange(10)
+a1 = a[2:5]
+
+a1 = np.array([[1, 1],
+
+               [2, 2]])
+
+a2 = np.array([[3, 3],
+
+               [4, 4]])
+
+b = np.vstack((a1, a2))
+print(b)
+
+b = np.hstack((a1, a2))
+print(b)
+
+# Hsplit
+
+x = np.arange(1, 25).reshape(2, 12)
+print(np.hsplit(x, 3))
+print(np.hsplit(x, (3, 4)))
+```
+
+## Views
+
+- When you derive a array form another is creates a `view` in numpy. This is not new data it rather points to the old data. It is known as a *shallow copy*. If you use the `.copy()` method it creates a new array in memory a *deep copy*. 
+
+```python
+b2 = a.copy()
+```
+
+## Basic array operations
+
