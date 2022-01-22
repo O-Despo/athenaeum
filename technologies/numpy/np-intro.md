@@ -262,3 +262,77 @@ b2 = a.copy()
 
 ## Basic array operations
 
+- `np.ones(number_of_elements, dtype=)`: creates all ones data
+- `np.sum(axis=)`: sums the elms of a array by the axis
+- You can do `*`, `/`, `+`, and `-` and they work as expected
+
+```python
+data = np.array([1, 2])
+ones = np.ones(2, dtype=int)
+data + ones
+```
+## Broadcasting
+
+- Broadcasting allows for compatible arrays to be multiplied including scalar operations. If they are not compatible it returns a `ValueError`
+
+```python
+data = np.array([1.0, 2.0])
+data * 1.6
+```
+
+## More array ops
+
+- `ndarray.min()`
+- `ndarray.max()`
+- `ndarray.sim()`
+- for each you can specify a axis to check 
+
+## Creating Matrices
+
+```python
+np.ones(3)
+#array([1., 1., 1.])
+
+np.zeros(3)
+#array([0., 0., 0.])
+
+rng = np.random.default_rng()  # the simplest way to generate random numbers
+
+rng.random(3) 
+#array([0.63696169, 0.26978671, 0.04097352])
+
+np.ones((3, 2))
+#array([[1., 1.],
+#       [1., 1.],
+#       [1., 1.]])
+
+np.zeros((3, 2))
+#array([[0., 0.],
+#       [0., 0.],
+#       [0., 0.]])
+
+rng.random((3, 2)) 
+```
+
+## Generating random numbers
+
+- `np.random.default_rng()`: returns a object that can make random numbers
+- `rng.intergers(max_num_not_included, size=)`: generates random array of integers 
+
+## Get unique items and counts
+
+- `np.unique()`: returns unique elements
+- `np.unique(input_array, return_index=, return_counts=, axis=)`: returns unique elements or rows or column
+
+## Transposing and reshaping
+
+- `np.transpose()` or `ndarray.T` transposes a array
+
+## Reverse array
+
+- `np.flip(input, axis=)`: reveres the array
+
+## Reshape and flatten multidimensional arrays
+
+- `np.flatten(input)`: makes a array 1-Dim dose makes a copy 
+- `np.ravel()`: same as flatten but changes parent array 
