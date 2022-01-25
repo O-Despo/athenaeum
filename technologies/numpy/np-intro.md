@@ -5,9 +5,9 @@
 ## Welcome to NP
 
 - **NumPy**: Numerical Python
-- Standard for working with python data
+- Standart for working with python data
 - Used in Pandas, SCiPy, MatPlotlib, scikit-learn,scikit-image
-- provide **ndarray** homogenous n-dimensional array object
+- provide **ndarray** homogenour n-dimentional array object
 
 ## install
 
