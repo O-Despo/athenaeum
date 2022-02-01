@@ -15,7 +15,8 @@
          window.alert(a * b)
       </script>
    </head>
-   <body> </body> ```
+   <body> </body> 
+```
 2. Use the developer console with the F12 key
 3. Install and use Node.js and run a "read-eval-print-loop" or REPL
 4. For longer code put the code in a file and use `console.log` to print then run it as `node fileName.js`
